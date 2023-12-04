@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="menu-bar">
+    <button onclick="goToIndex()">Home</button>
+    <button onclick="goToSides()">Sides</button>
+    <button onclick="goToDesserts()">Desserts</button>
+    <button class="cart-button" onclick="openCart()">Cart <span id="cart-total-price"></span></button>
+  </div>
+
+  <div class="content">
+    <div class="menu-item" id="coke">
+      <img src="cola.jpg" alt="Coca Cola">
+      <h2>Coca Cola</h2>
+      <p>Classic Coca Cola, refreshing and bubbly.</p>
+      <label for="quantityCoke">Quantity:</label>
+      <select id="quantityCoke">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartDrinks('coke', 'Coca Cola', 1.99)">Add to Cart</button>
+      <p class="item-price">$1.99</p>
+    </div>
+
+    <div class="menu-item" id="sprite">
+      <img src="sprite.jpeg" alt="Sprite">
+      <h2>Sprite</h2>
+      <p>Sprite, lemon-lime flavored soda.</p>
+      <label for="quantitySprite">Quantity:</label>
+      <select id="quantitySprite">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartDrinks('sprite', 'Sprite', 1.99)">Add to Cart</button>
+      <p class="item-price">$1.99</p>
+    </div>
+
+    <div class="menu-item" id="beer">
+      <img src="beer.jpeg" alt="Beer">
+      <h2>Beer</h2>
+      <p>Cold and refreshing beer.</p>
+      <label for="quantityBeer">Quantity:</label>
+      <select id="quantityBeer">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartDrinks('beer', 'Beer', 3.99)">Add to Cart</button>
+      <p class="item-price">$3.99</p>
+    </div>
+  </div>
+
+  <div class="cart-menu" id="cart-menu">
+    <button class="close-btn" onclick="closeCart()">X</button>
+    <div id="cart-content">
+    </div>
+    <button onclick="goToCheckout()">Go to Checkout</button>
+    <button onclick="clearCartClose()">Clear Cart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

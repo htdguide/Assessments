@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sides</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="menu-bar">
+    <button onclick="goToIndex()">Home</button>
+    <button onclick="goToDrinks()">Drinks</button>
+    <button onclick="goToDesserts()">Desserts</button>
+    <button class="cart-button" onclick="openCart()">Cart <span id="cart-total-price"></span></button>
+  </div>
+
+  <div class="content">
+    <div class="menu-item" id="wings">
+      <img src="wings.jpeg" alt="Chicken Wings">
+      <h2>Chicken Wings</h2>
+      <p>Delicious chicken wings with your choice of sauce.</p>
+      <label for="quantityWings">Quantity:</label>
+      <select id="quantityWings">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartSides('wings', 'Chicken Wings', 9.99)">Add to Cart</button>
+      <p class="item-price">$9.99</p> 
+    </div>
+    <div class="menu-item" id="rolls">
+      <img src="rolls.jpg" alt="Garlic Rolls">
+      <h2>Garlic Rolls</h2>
+      <p>Freshly baked garlic rolls with a touch of butter.</p>
+      <label for="quantityRolls">Quantity:</label>
+      <select id="quantityRolls">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartSides('rolls', 'Garlic Rolls', 4.99)">Add to Cart</button>
+      <p class="item-price">$4.99</p>
+    </div>
+
+    <div class="menu-item" id="sauces">
+      <img src="sauces.jpg" alt="Dipping Sauces">
+      <h2>Dipping Sauces</h2>
+      <p>Assorted dipping sauces for your sides.</p>
+      <label for="quantitySauces">Quantity:</label>
+      <select id="quantitySauces">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartSides('sauces', 'Dipping Sauces', 2.99)">Add to Cart</button>
+      <p class="item-price">$2.99</p>
+    </div>
+  </div>
+
+  <div class="cart-menu" id="cart-menu">
+    <button class="close-btn" onclick="closeCart()">X</button>
+    <div id="cart-content">
+    </div>
+    <button onclick="goToCheckout()">Go to Checkout</button>
+    <button onclick="clearCartClose()">Clear Cart</button>
+  </div>
+
+  <div id="cart-menu">
+    <div id="cart-content"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

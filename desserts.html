@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desserts</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="menu-bar">
+    <button onclick="goToIndex()">Home</button>
+    <button onclick="goToDrinks()">Drinks</button>
+    <button onclick="goToSides()">Sides</button>
+    <button class="cart-button" onclick="openCart()">Cart <span id="cart-total-price"></span></button>
+  </div>
+
+  <div class="content">
+    <div class="menu-item" id="iceCream">
+      <img src="icecream.jpg" alt="Ice Cream">
+      <h2>Ice Cream</h2>
+      <p>Delicious ice cream with various flavors.</p>
+      <label for="quantityIceCream">Quantity:</label>
+      <select id="quantityIceCream">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartDesserts('iceCream', 'Ice Cream', 5.99)">Add to Cart</button>
+      <p class="item-price">$5.99</p>
+    </div>
+    <div class="menu-item" id="cheesecake">
+      <img src="cheesecake.jpg" alt="Cheesecake">
+      <h2>Cheesecake</h2>
+      <p>Classic cheesecake with a rich and creamy texture.</p>
+      <label for="quantityCheesecake">Quantity:</label>
+      <select id="quantityCheesecake">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartDesserts('cheesecake', 'Cheesecake', 7.99)">Add to Cart</button>
+      <p class="item-price">$7.99</p>
+    </div>
+
+    <div class="menu-item" id="donut">
+      <img src="donut.jpg" alt="Donut">
+      <h2>Donut</h2>
+      <p>Soft and sweet donut with various toppings.</p>
+      <label for="quantityDonut">Quantity:</label>
+      <select id="quantityDonut">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="addToCartDesserts('donut', 'Donut', 3.99)">Add to Cart</button>
+      <p class="item-price">$3.99</p>
+    </div>
+  </div>
+
+
+  <div class="cart-menu" id="cart-menu">
+    <button class="close-btn" onclick="closeCart()">X</button>
+    <div id="cart-content">
+    </div>
+    <button onclick="goToCheckout()">Go to Checkout</button>
+    <button onclick="clearCartClose()">Clear Cart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

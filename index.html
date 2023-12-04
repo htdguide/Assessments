@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pizza Shop - Menu</title>
+</head>
+<body>
+  <div class="menu-bar">
+    <button onclick="goToLogin()">Logout</button>
+    <button onclick="goToDrinks()">Drinks</button>
+    <button onclick="goToDesserts()">Desserts</button>
+    <button onclick="goToSides()">Sides</button>
+    <button onclick="openCart()">Cart <span id="cart-total-price"></span></button>
+  </div>
+
+  <div class="pizza-menu">
+    <div class="pizza-item" id="pizza1">
+      <img src="pizza1.jpg" alt="Pizza 1">
+      <h3>Pizza Rita</h3>
+      <p>Price: $<span id="price1">10.99</span></p>
+      <label for="size1">Size:</label>
+      <select id="size1" onchange="updatePrice('pizza1')">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+      <label for="quantity1">Quantity:</label>
+      <input type="number" id="quantity1" value="1" min="1">
+      <button onclick="addToCart('pizza1', 'Pizza Rita', 10.99)">Add to Cart</button>
+    </div>
+
+    <div class="pizza-item" id="pizza2">
+      <img src="pizza2.jpg" alt="Roni Pepper">
+      <h3>Roni Pepper</h3>
+      <p>Price: $<span id="price2">13.99</span></p>
+      <label for="size2">Size:</label>
+      <select id="size2" onchange="updatePrice('pizza2')">
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+      <label for="quantity2">Quantity:</label>
+      <input type="number" id="quantity2" value="1" min="1">
+      <button onclick="addToCart('pizza2', 'Roni Pepper', 13.99)">Add to Cart</button>
+    </div>
+
+    <div class="pizza-item" id="pizza3">
+        <img src="pizza3.jpg" alt="Magic Pizza">
+        <h3>Magic Pizza</h3>
+        <p>Price: $<span id="price3">10.99</span></p>
+        <label for="size3">Size:</label>
+        <select id="size3" onchange="updatePrice('pizza3')">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <label for="quantity3">Quantity:</label>
+        <input type="number" id="quantity3" value="1" min="1">
+        <button onclick="addToCart('pizza3', 'Magic Pizza', 10.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="cart-menu" id="cart-menu">
+    <button class="close-btn" onclick="closeCart()">X</button>
+    <div id="cart-content">
+    </div>
+    <button onclick="goToCheckout()">Go to Checkout</button>
+    <button onclick="clearCartClose()">Clear Cart</button>
+  </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
